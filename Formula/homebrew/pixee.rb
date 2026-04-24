@@ -1,25 +1,32 @@
 class Pixee < Formula
-  include Language::Python::Virtualenv
-
-  #cli_tag = "0.5.0"
-
-  desc "Fix and prevent bugs and security vulnerabilities in your code"
-  homepage "https://pixee.ai"
-
-  url "https://worker-brew.pixee.workers.dev/ad/6c/3c4ada32a280b207b65672324cb516b1a97f85952f7f9d69a62c1704e5ba/pixee-0.5.5.tar.gz"
-  sha256 "a922aa4a60189cd2c523d4581275f21a6adf7221acf72d833fe8896d4e4bd673"
-
-  #url "https://github.com/pixee/pixee-cli.git", tag: cli_tag
-  #head "https://github.com/pixee/pixee-cli.git", tag: cli_tag
+  desc "CLI for the Pixee agentic AppSec platform"
+  homepage "https://github.com/pixee/pixee-cli"
+  version "0.9.1"
   license "MIT"
 
-  depends_on "python@3.11"
-  depends_on "pixee-python-codemods"
-  depends_on "pixee-java-codemods"
+  on_macos do
+    on_arm do
+      url "https://github.com/pixee/pixee-cli/releases/download/v0.9.1/pixee-darwin-arm64.tar.gz"
+      sha256 "d736d60646876560ef92327200e3e963b544caca9f4ad55fec632f209d6d5854"
+    end
+  end
+
+  on_linux do
+    on_intel do
+      url "https://github.com/pixee/pixee-cli/releases/download/v0.9.1/pixee-linux-x64.tar.gz"
+      sha256 "ae96a3c5e4ac0cacf3b552f2d92a0dd8c4ed3eaa7d30417c5a91bc915b9f5245"
+    end
+    on_arm do
+      url "https://github.com/pixee/pixee-cli/releases/download/v0.9.1/pixee-linux-arm64.tar.gz"
+      sha256 "eacf00ba6a2d2ecde8cf54a52b76923a8748fc12eaf01bfe5674bffac895459c"
+    end
+  end
 
   def install
-    venv = virtualenv_create(libexec, Formula["python@3.11"].bin/"python3.11", without_pip: false)
-    system libexec/"bin/pip", "install", "-v", "--ignore-installed", buildpath
-    bin.install_symlink libexec/"bin/pixee" => "pixee"
+    bin.install "pixee"
+  end
+
+  test do
+    assert_match version.to_s, shell_output("#{bin}/pixee --version")
   end
 end
