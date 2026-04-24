@@ -1,3 +1,12 @@
-# Pixee Homebrew Formula
+# Pixee Homebrew Tap
 
-This repository contains the [homebrew](https://brew.sh/) formulae for the [Pixee CLI](https://github.com/pixee/pixee-cli#readme).
+Homebrew tap for the [Pixee](https://pixee.ai) CLI.
+
+## Install
+
+```bash
+brew install pixee/tap/pixee
+```
+
+The formula installs the `pixee` binary published by
+[`pixee/pixee-cli`](https://github.com/pixee/pixee-cli). Run `pixee --help` to see every subcommand.

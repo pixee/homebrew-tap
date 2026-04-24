@@ -1,0 +1,17 @@
+name: Lint Formula
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  brew-style:
+    name: brew style
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v6
+      - run: brew style Formula/homebrew/pixee.rb
