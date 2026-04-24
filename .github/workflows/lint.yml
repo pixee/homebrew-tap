@@ -11,7 +11,7 @@ permissions:
 jobs:
   brew-style:
     name: brew style
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     steps:
       - uses: actions/checkout@v6
       - run: brew style Formula/homebrew/pixee.rb
