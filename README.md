@@ -5,7 +5,8 @@ Homebrew tap for the [Pixee](https://pixee.ai) CLI.
 ## Install
 
 ```bash
-brew install pixee/tap/pixee
+brew tap pixee/pixee
+brew install pixee
 ```
 
 The formula installs the `pixee` binary published by
