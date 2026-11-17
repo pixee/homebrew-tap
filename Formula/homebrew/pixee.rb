@@ -1,24 +1,24 @@
 class Pixee < Formula
   desc "CLI for the Pixee agentic AppSec platform"
   homepage "https://github.com/pixee/pixee-cli"
-  version "0.21.0"
+  version "0.22.1"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/pixee/pixee-cli/releases/download/v0.21.0/pixee-darwin-arm64.tar.gz"
-      sha256 "7343d8970e941d17d4ac056aef77283a213cdbb4d65c4136ca4e52e3720669c5"
+      url "https://github.com/pixee/pixee-cli/releases/download/v0.22.1/pixee-darwin-arm64.tar.gz"
+      sha256 "a8880cc4de9953ade1af6320b884648d2935854ecba7c75b1b32def1ceca3699"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/pixee/pixee-cli/releases/download/v0.21.0/pixee-linux-x64.tar.gz"
-      sha256 "a8ae9f874e4f651e277aac5c24dc7c3da5a17ce75ff7c6e18147bde59a84d9d5"
+      url "https://github.com/pixee/pixee-cli/releases/download/v0.22.1/pixee-linux-x64.tar.gz"
+      sha256 "9b12fe5ea54e0dce8334e41aa188f536b4ef202e2e34e285eba438bccc6d02a7"
     end
     on_arm do
-      url "https://github.com/pixee/pixee-cli/releases/download/v0.21.0/pixee-linux-arm64.tar.gz"
-      sha256 "d6e1d0b1265f2595093737e997eb154f43016de6a4ac1c872345598069a3d61d"
+      url "https://github.com/pixee/pixee-cli/releases/download/v0.22.1/pixee-linux-arm64.tar.gz"
+      sha256 "f46be4b54ae0226022a34ed3212257e8947d873dcd4173abb7fa43a6886a4077"
     end
   end
 
